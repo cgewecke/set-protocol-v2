@@ -70,7 +70,7 @@ import { LendToAaveMigrator__factory } from "../../typechain/factories/LendToAav
 
 import {
   CurveDeposit,
-  CurveEthStEthStableswap,
+  CurveEthStEthExchange,
   CurvePoolERC20,
   CRVToken,
   GaugeController,
@@ -83,7 +83,7 @@ import {
 import { CurvePoolERC20__factory } from "../../typechain/factories/CurvePoolERC20__factory";
 import { Stableswap__factory } from "../../typechain/factories/Stableswap__factory";
 import { CurveDeposit__factory } from "../../typechain/factories/CurveDeposit__factory";
-import { CurveEthStEthStableswap__factory } from "../../typechain/factories/CurveEthStEthStableswap__factory";
+import { CurveEthStEthExchange__factory } from "../../typechain/factories/CurveEthStEthExchange__factory";
 import { CRVToken__factory } from "../../typechain/factories/CRVToken__factory";
 import { GaugeController__factory } from "../../typechain/factories/GaugeController__factory";
 import { LiquidityGaugeReward__factory } from "../../typechain/factories/LiquidityGaugeReward__factory";
@@ -662,15 +662,15 @@ export default class DeployExternalContracts {
     );
   }
 
-  public async deployCurveEthStEthStableswap(
+  public async deployCurveEthStEthExchange(
     _owner: string,
     _coins: [string, string],
     _pool_token: string,
     _A: BigNumberish = 1,
     _fee: BigNumberish = 0,
     _adminFee: BigNumberish = 0
-  ): Promise<CurveEthStEthStableswap> {
-    return await new CurveEthStEthStableswap__factory(this._deployerSigner).deploy(
+  ): Promise<CurveEthStEthExchange> {
+    return await new CurveEthStEthExchange__factory(this._deployerSigner).deploy(
       _owner,
       _coins,
       _pool_token,
