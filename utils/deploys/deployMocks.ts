@@ -44,6 +44,7 @@ import {
   StandardTokenWithRoundingErrorMock,
   StandardTokenWithFeeMock,
   TradeAdapterMock,
+  StringArrayUtilsMock,
   SynthMock,
   SynthetixExchangerMock,
   Uint256ArrayUtilsMock,
@@ -106,6 +107,7 @@ import { Uint256ArrayUtilsMock__factory } from "../../typechain/factories/Uint25
 import { WrapAdapterMock__factory } from "../../typechain/factories/WrapAdapterMock__factory";
 import { WrapV2AdapterMock__factory } from "../../typechain/factories/WrapV2AdapterMock__factory";
 import { ZeroExMock__factory } from "../../typechain/factories/ZeroExMock__factory";
+import { StringArrayUtilsMock__factory  } from "../../typechain/factories/StringArrayUtilsMock__factory";
 import { SynthMock__factory } from "../../typechain/factories/SynthMock__factory";
 import { SynthetixExchangerMock__factory } from "../../typechain/factories/SynthetixExchangerMock__factory";
 import { YearnStrategyMock__factory } from "../../typechain/factories/YearnStrategyMock__factory";
@@ -449,6 +451,10 @@ export default class DeployMocks {
 
   public async deployChainlinkAggregatorMock(decimals: number): Promise<ChainlinkAggregatorMock> {
     return await new ChainlinkAggregatorMock__factory(this._deployerSigner).deploy(decimals);
+  }
+
+  public async deployStringArrayUtilsMock(): Promise<StringArrayUtilsMock> {
+    return await new StringArrayUtilsMock__factory(this._deployerSigner).deploy();
   }
 
   /** ***********************************
